@@ -1,0 +1,24 @@
+/**
+ * You can edit, run, and share this code. 
+ * play.kotlinlang.org 
+ */
+
+// Exemplo para aprender função.
+
+fun main() {
+    
+    println(passarAno()) // Imprime o resultado da função que se encontra fora de main, abaixo. O resultado é o que está em return na função
+    
+}
+
+fun passarAno() : String { // Declara a função no padrão nome da função () : tipo de dado que ela retorna
+    var x = (1..100).random() // variável com a função random para receber um número aleatório entre 1 e 100
+    println(x)
+    return if (x >= 70){ // o return indica que o resultado da verificação if será o retorno dessa função. Na prática, o println de main irá imprimir o resultado dessa condicional
+       "Passou!!"
+    }
+    else{
+        "Reprovado :("
+    }
+
+}

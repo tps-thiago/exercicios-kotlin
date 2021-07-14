@@ -1,0 +1,45 @@
+/**
+ * You can edit, run, and share this code. 
+ * play.kotlinlang.org 
+ */
+
+fun main() {
+   
+    var x:Float?
+    var y:Float?
+    var operacao:Int = (1..7).random()
+    
+    println("Menu:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão")
+    
+    println("Número da operação: $operacao")
+    
+    if(operacao == 7){  // Caso o número aleatório de operacao seja 7, ele torna x nulo para testar a verificação de número nulo
+        x = null
+        y = 5.2f
+    }
+    else{
+        x = 2.1f
+        y = 3.2f
+    }
+    
+    var nulo = x?: "Valor de x é nulo".toString() // exemplo de elvis operation
+    println(nulo)
+    
+    if(x == null){
+        println("Programa encerrado, possui valor nulo.") // Se x for nulo, o programa é encerrado. Se não, o programa continua.
+    }
+    else{
+        calculadora(x, y, operacao) //chama a função de calculadora, sem return pois a impressão está sendo feita dentro da própria calculadora.
+    }
+    
+}    
+    
+    fun calculadora(a:Float, b:Float, c:Int){ // a recebe x, b recebe y e c recebe operacao
+    when(c){
+        1 -> println("O resultado da soma é: " + (a+b))
+        2 -> println("O resultado da subtração é: " + (a-b))
+        3 -> println("O resultado da multiplicação é: " + (a*b))
+        4 -> println("O resultado da divisão é: " + (a/b))
+        else -> println("Valor inválido.")
+    }
+}
